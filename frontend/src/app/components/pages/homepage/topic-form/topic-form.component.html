@@ -1,0 +1,17 @@
+<div class="host">
+  <h2>Create a new topic</h2>
+  <form [formGroup]='topicForm' (ngSubmit)="submitTopic()">
+    <div class="input-wrappers">
+      <span class="p-float-label">
+        <input pInputText id="title" formControlName="title" />
+        <label for="title">Title</label>
+      </span>
+      <span class="p-float-label">
+        <textarea formControlName="body" id="body" rows="5" cols="30" pInputTextarea></textarea>
+        <label for="body">Body</label>
+      </span>
+    </div>
+    <p-button [disabled]="topicForm.invalid || !this.selectedUser" type="submit" icon="pi pi-plus" [rounded]="true"
+      severity="success"></p-button>
+  </form>
+</div>

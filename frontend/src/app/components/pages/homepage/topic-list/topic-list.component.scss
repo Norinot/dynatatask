@@ -1,0 +1,36 @@
+.node {
+  border-left: 1px solid #787878;
+  padding: 4px;
+  margin: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.node-header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.node-body{
+  background-color: #2d2d2d;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: fit-content;
+}
+
+.button-reply{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+h3,
+p {
+  margin: 0;
+}
+
+.node-textarea {
+  display: flex;
+  align-items: center;
+}

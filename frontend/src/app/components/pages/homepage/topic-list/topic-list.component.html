@@ -1,0 +1,22 @@
+<p-tree [value]="nodes" class="w-full">
+  <ng-template let-node pTemplate="default">
+    <div class="node">
+      <div class="node-header">
+        <p> &#64;{{ node.author.name }}</p>
+        <h3 class="node-title">{{ node.label }}</h3>
+      </div>
+      <div class="button-reply">
+        <p class="node-body">{{ node.data }}</p>
+        @if (activeUser && activeUser.id !== 1) {
+        <p-button icon="pi pi-reply" [rounded]="true" [text]="true" (onClick)="toggleChat(node)"></p-button>
+        }
+      </div>
+      @if (node.chatOpen) {
+      <div class="node-textarea">
+        <textarea [formControl]=commentControl rows="2" cols="50" pInputTextarea [autoResize]="true"></textarea>
+        <p-button icon="pi pi-send" [rounded]="true" [text]="true" (onClick)="addComment(node)"></p-button>
+      </div>
+      }
+    </div>
+  </ng-template>
+</p-tree>

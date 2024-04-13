@@ -1,0 +1,19 @@
+.host {
+  margin: 30px;
+  max-width: fit-content;
+}
+
+.input-wrappers {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 22px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+p-button{
+  align-self: flex-end;
+}

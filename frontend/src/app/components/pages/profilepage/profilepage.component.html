@@ -1,0 +1,49 @@
+<div class="profile-wrapper">
+
+
+  <form [formGroup]="profileForm" (ngSubmit)="changeUserData()" class="generic-panel">
+    @if(activeUser){
+    <h3>&#64;{{activeUser.name}}</h3>
+    <h3>Role: {{activeUser.role}}</h3>
+    }
+    <span class="p-float-label">
+      <input pInputText id="name" formControlName="name" autocomplete="username" type="text" />
+      <label for="name">Name</label>
+    </span>
+    <span class="p-float-label">
+      <input pInputText id="email" type="email" formControlName="email" autocomplete="username" />
+      <label for="email">Email</label>
+    </span>
+    <span class="p-float-label">
+      <input pInputText id="password" formControlName="password" type="password" autocomplete="new-password" />
+      <label for="password">Password</label>
+    </span>
+    <span class="p-float-label">
+      <input pInputText id="repeatPassword" formControlName="repeatPassword" type="password"
+        autocomplete="new-password" />
+      <label for="repeatPassword">Repeat Password</label>
+    </span>
+
+    <small class="p-error smallErrorText"></small>
+
+    <p-button [disabled]="!this.activeUser || this.profileForm.errors" type="submit" label="Save" />
+
+  </form>
+
+  <div class="generic-panel">
+    <h2>Permissions</h2>
+    <div class="permission-wrapper">
+      <span [appPermission]="activeUser?.role ?? 5" [permission]="1">Read Comments</span>
+      <span [appPermission]="activeUser?.role ?? 5" [permission]="2">Add/Delete Comments</span>
+      <span [appPermission]="activeUser?.role ?? 5" [permission]="4">Add/Delete Topics</span>
+      <span [appPermission]="activeUser?.role ?? 5" [permission]="8">Delete Others Comments/Topics</span>
+    </div>
+    @if (activeUser) {
+    <h2>User Statistics</h2>
+    <div class="statistics-wrapper">
+      <span>Number of comments: {{this.userStats?.commentsCount}}</span>
+      <span>Number of topics: {{this.userStats?.topicsCount}}</span>
+    </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.profile-wrapper {
+  margin: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+}
+
+.generic-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 10px;
+  background-color: #313137;
+}
+
+.smallErrorText {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 200px;
+}
+
+.permission-wrapper {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+
+  span {
+    border: 1px solid #494995;
+    border-radius: 10px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+  }
+
+  span:not(.has-permission) {
+    background-color: rgb(255, 79, 79);
+  }
+}
+
+.statistics-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.has-permission {
+  background-color: #478947;
+}
